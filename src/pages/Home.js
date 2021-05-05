@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Modal } from "react-bootstrap";
 import Masonry from "react-masonry-css";
 import axios from "axios";
 import { useQuery } from "react-query";
@@ -10,6 +10,7 @@ import { FavoriteContext } from "../context/userContext";
 export default function Home() {
   const [favorite, dispatch] = useContext(FavoriteContext);
   const [images, setImages] = useState([]);
+  const [modal, setModal] = useState(false);
 
   const favorites = favorite.favorites;
 
@@ -57,7 +58,7 @@ export default function Home() {
                   className="favorite mr-2"
                   onClick={() => {
                     favoriteHandle(item);
-                    alert("saving");
+                    setModal(!modal);
                   }}
                 >
                   Favorite
@@ -75,6 +76,34 @@ export default function Home() {
           </div>
         ))}
       </Masonry>
+
+      {/* modal favorite */}
+      <Modal
+        show={modal}
+        onHide={setModal}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        className="modal-container"
+      >
+        <Modal.Header closeButton className="border-0">
+          <Modal.Title id="contained-modal-title-vcenter">Berhasil</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>Gambar berhasil di simpan</p>
+        </Modal.Body>
+        <Modal.Footer className="border-0">
+          <Button
+            className="button-danger-lg shadow-none"
+            variant="danger"
+            onClick={() => {
+              setModal(!modal);
+            }}
+          >
+            Tutup
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }

@@ -24,10 +24,8 @@ function App() {
               <Navbar className="justify-content-between">
                 <div className="d-flex align-items-center">
                   <h3>ImgSharing</h3>
-                  <Link to="/" className="ml-5">
-                    <span className="font-weight-bold text-decoration-none text-dark">
-                      Beranda
-                    </span>
+                  <Link to="/" className="ml-5 text-decoration-none">
+                    <span className="font-weight-bold text-dark">Beranda</span>
                   </Link>
                 </div>
                 <div>
@@ -42,7 +40,7 @@ function App() {
                     <Button
                       type="submit"
                       variant="dark"
-                      className="shadow-none"
+                      className="shadow-none button-danger-lg"
                     >
                       Dashboard
                     </Button>
