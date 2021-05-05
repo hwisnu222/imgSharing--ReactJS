@@ -21,21 +21,21 @@ function App() {
         <FavoriteContextProvider>
           <BrowserRouter>
             <header className="py-2 sticky-top bg-white">
-              <Navbar className="justify-content-between">
+              <Navbar className="flex-column flex-md-row justify-content-between">
                 <div className="d-flex align-items-center">
                   <h3>ImgSharing</h3>
                   <Link to="/" className="ml-5 text-decoration-none">
                     <span className="font-weight-bold text-dark">Beranda</span>
                   </Link>
                 </div>
-                <div>
+                <div className="mt-md-0 mt-4">
                   <FormControl
                     type="text"
                     placeholder="Search"
                     className=" mr-sm-2 search shadow-none"
                   />
                 </div>
-                <div inline>
+                <div inline className="mt-md-0 mt-4">
                   <Link to="/favorite">
                     <Button
                       type="submit"
