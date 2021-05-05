@@ -23,7 +23,7 @@ export default function Favorites() {
               <h3>{item.title}</h3>
               <p className="text-muted">{item.title}</p>
               <Button
-                className="button-danger-lg shadow-none"
+                className="button-danger-lg shadow-none mt-4"
                 variant="danger"
                 onClick={() => {
                   DeleteFavorite(index);
